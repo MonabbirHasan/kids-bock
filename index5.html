@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>abcd page</title>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <link rel="stylesheet" href="css/style3.css" />
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+ <span class="side_menu_btn"><ion-icon name="menu-outline"></ion-icon></span>
+     <div class="side_menu_box">
+        <ul>
+            <li class="list active"><a href="index.html">
+                    <ion-icon name="home-outline"></ion-icon>home
+                </a></li>
+            <li class="list"><a href="index4.html">
+                    <ion-icon name="book-outline"></ion-icon>arabic
+                </a></li>
+            <li class="list"><a href="index6.html">
+                    <ion-icon name="calculator-outline"></ion-icon>math
+                </a></li>
+            <li class="list"><a href="index_3.html">
+                    <ion-icon name="people-outline"></ion-icon>ক+খ
+                </a></li>
+            <li class="list"><a href="index_2.html">
+                    <ion-icon name="library-outline"></ion-icon>অ+আ
+            </a></li>
+            <li class="list"><a href="index5.html">
+                <ion-icon name="barcode-outline"></ion-icon>ABCD
+            </a></li>
+            <li class="list"><a href="index8.html">
+                <ion-icon name="barcode-outline"></ion-icon> ANIMAL
+            </a></li>
+            <li class="list"><a href="index7.html">
+                    <ion-icon name="musical-notes-outline"></ion-icon>kids music
+            </a></li>
+        </ul>
+    </div>
+   
+    <section class="wraper">
+        <div class="box" data-text='A'>A</div>
+        <div class="box" data-text='B'>B</div>
+        <div class="box" data-text='C'>C</div>
+        <div class="box" data-text='D'>D</div>
+        <div class="box" data-text='E'>E</div>
+        <div class="box" data-text='F'>F</div>
+        <div class="box" data-text='G'>G</div>
+        <div class="box" data-text='H'>H</div>
+        <div class="box" data-text='I'>I</div>
+        <div class="box" data-text='J'>J</div>
+        <div class="box" data-text='K'>K</div>
+        <div class="box" data-text='L'>L</div>
+        <div class="box" data-text='M'>M</div>
+        <div class="box" data-text='N'>N</div>
+        <div class="box" data-text='O'>O</div>
+        <div class="box" data-text='P'>P</div>
+        <div class="box" data-text='Q'>Q</div>
+        <div class="box" data-text='R'>R</div>
+        <div class="box" data-text='S'>S</div>
+        <div class="box" data-text='T'>T</div>
+        <div class="box" data-text='U'>U</div>
+        <div class="box" data-text='V'>V</div>
+        <div class="box" data-text='W'>W</div>
+        <div class="box" data-text='X'>X</div>
+        <div class="box" data-text='Y'>Y</div>
+        <div class="box" data-text='Z'>Z</div>
+        <div class="song_box" data-text="Hhhoorrey" id="song">
+            🤓
+            <audio src="image/abcd.mp3" aria-disabled="false"></audio>
+        </div>
+        <div class="box" data-text='you can study now'>😎</div>
+        <!--    29 complited-->
+    </section>
+    <script type="text/javascript">
+        //////////////////////////////
+        var songs = document.querySelector("#song");
+      var songText = songs.getAttribute("data-song");
+      var audios = document.querySelector("audio");
+      songs.addEventListener("click", function () {
+        audios.volume =.8;
+        if (audios.paused) {
+          audios.play();
+        } else {
+          audios.pause();
+        }
+      });
+        ////////////////////////////////
+        var box = document.querySelectorAll(".box");
+        var speec = new SpeechSynthesisUtterance();
+        speec.lang = 'en-US'
+        speec.rate = .7;
+        box.forEach(function(index, val) {
+            index.onclick = function() {
+                console.log(index.getAttribute("data-text"), val)
+                speec.text = index.getAttribute("data-text");
+                window.speechSynthesis.speak(speec)
+            }
+        });
+        box.onclick = function() {
+            var datatext = box.getAttribute('data-text');
+        }
+        ///////////////////////////////////
+           var side_menu_btn = document.querySelector(".side_menu_btn");
+        var side_menu_box=document.querySelector(".side_menu_box");
+        side_menu_btn.onclick = function() {
+            side_menu_box.classList.toggle("side_btn_active");
+        }
+    </script>
+</body>
+
+</html>

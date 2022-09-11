@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+           margin: 0;
+           padding: 0%;
+        }
+        body{
+            margin: 0%;
+            padding: 0%;
+            box-sizing: border-box;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            /* min-height: 100vh; */
+        } 
+        section{
+            margin: auto;
+        }
+        .dev_img {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        section .dev_img img{
+            width: 300px;
+            height: 300px;
+            margin: 10px 0px;
+            border-radius: 10px;
+            border: 5px solid rgb(237, 43, 255);
+            box-shadow: 0 0 10px rgb(237, 43, 255);
+        }
+        .dev_info{
+            width: 100%;
+            padding: 10px 0px;
+        }
+        .dev_info h3{
+            font-size: 23px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-transform: capitalize;
+            padding: 5px 0px;
+            display: inline-block;
+            margin: 10px;
+            text-shadow: -5px -5px 10px blueviolet, 10px 10px 30px blueviolet;
+            font-weight: 900;
+            animation: text linear infinite 5s;
+        }
+        @keyframes text{
+            0%{
+                filter: hue-rotate(0);
+            }
+            100%{
+                filter: hue-rotate(300deg);
+            }
+        }
+        
+        .dev_info p{
+            font-family: sans-serif;
+            text-transform: capitalize;
+            color: #000;
+            margin: 5px;
+            line-height: 25px;
+            font-weight: 400;
+            animation: text linear infinite 2s;
+            text-shadow: -5px -5px 10px blueviolet, 10px 10px 30px blueviolet;
+            font-weight: bolder;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <div class="dev_img">
+            <img src="image/dev_img.png" />
+        </div>
+        <div class="dev_info">
+            <h3>name:md:monabbir hasan </h3>
+            <p>hello & welcome our app..Hi I'm hasan I'm full stack web developer and web application developer. i have some experience in web development 
+               sum time letter I' thogt about this app and finally I'm creating this app..
+            </p>
+        </div>
+    </section>
+<script>
+    // var img=document.querySelector("img");
+    // img.width=window.innerWidth;
+    // img.height=window.innerHeight;
+</script>
+</body>
+</html>l

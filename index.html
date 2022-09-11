@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>baby books</title>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+body {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    min-height: 100vh;
+    background: linear-gradient(45deg, #9935a4, #ffce00);
+    margin: 0;
+    padding: 0;
+}
+.open >a{
+text-decoration:none;
+font-size: large;
+text-transform: capitalize;
+color: black;
+}
+
+    </style>
+</head>
+
+<body>
+  <div class="ingo_form" aria-disabled="false" >
+  <input type="text" class="usename"><br>
+  <button id="form_start">LOgin</button>
+  </div>
+   <header>
+       <div class="img_box"><img class="img_color" src="image/kids.png"></div>
+        <button class="open"><a href="info.html">developer</a></button>
+       <div class="share_box">
+        <span><ion-icon name="logo-instagram"></ion-icon></span>
+        <span class="share_icon"><ion-icon name="share-social"></ion-icon></span>
+        <span><ion-icon name="logo-facebook"></ion-icon></span>
+       </div>
+   </header>
+     <div class="side_men">
+         <span class="side_menu_btn"><ion-icon name="menu-outline"></ion-icon></span>
+     <div class="side_menu_box">
+        <ul>
+            <li class="list active"><a href="index.html">
+                    <ion-icon name="home-outline"></ion-icon>home
+                </a></li>
+            <li class="list"><a href="index4.html">
+                    <ion-icon name="book-outline"></ion-icon>arabic
+                </a></li>
+            <li class="list"><a href="index6.html">
+                    <ion-icon name="calculator-outline"></ion-icon>math
+                </a></li>
+            <li class="list"><a href="index_3.html">
+                    <ion-icon name="people-outline"></ion-icon>ক+খ
+                </a></li>
+            <li class="list"><a href="index_2.html">
+                    <ion-icon name="library-outline"></ion-icon>অ+আ
+            </a></li>
+            <li class="list"><a href="index5.html">
+                <ion-icon name="barcode-outline"></ion-icon>ABCD
+            </a></li>
+            <li class="list"><a href="index7.html">
+                <ion-icon name="musical-notes-outline"></ion-icon>kids music
+        </a></li>
+        <li class="list"><a href="index8.html">
+            <ion-icon name="musical-notes-outline"></ion-icon>ANIMAL
+        </a></li>
+        </ul>
+    </div>
+     </div>
+    <script type="text/javascript">
+        var list=document.querySelectorAll(".list");
+        for(var i=0;i<list.length;i++){
+            list[i].addEventListener("click",function(){
+              for(var j=0;j<list.length;j++){
+                  list[j].classList.remove('active');
+              }
+                this.classList.add("active");
+            });
+        }
+      var side_menu_btn = document.querySelector(".side_menu_btn");
+        var side_menu_box=document.querySelector(".side_menu_box");
+        side_menu_btn.onclick = function() {
+            side_menu_box.classList.toggle("side_btn_active");
+        }
+       var share_icon=document.querySelector(".share_icon");
+        var data={
+            name:"Monabbir Hasan",
+            title:"hmd320667@gmail.com",
+            url:"https://mdmhshasan.github.io/portfolio/index.html"
+        };
+        try{
+        share_icon.addEventListener("click",async()=>{
+            await navigator.share(data);
+        });
+        }catch(e){
+            console.log(e.error)
+        } 
+       var ingo_form=document.querySelector(".ingo_form");
+        var form_start=document.querySelector("#form_start");
+        var usename=document.querySelector(".usename");
+        window.onload=function(){
+         ingo_form.classList.add("form_active");   
+        }
+        var speek=new SpeechSynthesisUtterance();
+        speek.lang='bn-IN';
+        speek.rate=.8;
+        speek.volume=100;
+        form_start.addEventListener("click",function(){
+        speek.text='আসসালামুয়ালাইকুম '+usename.value+'welcome to our new apps';
+        window.speechSynthesis.speak(speek);
+            if(usename.value==''){
+                alert("please enter your name then try agai");
+            }else{
+                ingo_form.classList.remove("form_active");
+            }
+        });
+        // img_box
+        var img_box=document.querySelector(".img_box img");
+        var img_color=document.querySelector(".img_color");
+        
+        img_box.addEventListener("click",function(e){
+            e.preventDefault();
+            var color=Math.floor(Math.random()*100);
+           img_color.style.filter=`hue-rotate(${color}deg)`;
+        });
+    </script>
+</body>
+
+</html>

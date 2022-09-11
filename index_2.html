@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Soroborno</title>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+    <link rel="stylesheet" href="css/style3.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <span class="side_menu_btn"><ion-icon name="menu-outline"></ion-icon></span>
+    <div class="side_menu_box">
+      <ul>
+        <li class="list active">
+          <a href="index.html">
+            <ion-icon name="home-outline"></ion-icon> home
+          </a>
+        </li>
+        <li class="list">
+          <a href="index4.html"> <ion-icon name="book-outline"></ion-icon> arabic </a>
+        </li>
+        <li class="list">
+          <a href="index6.html">
+            <ion-icon name="calculator-outline"></ion-icon> math
+          </a>
+        </li>
+        <li class="list">
+          <a href="index_3.html"> <ion-icon name="people-outline"></ion-icon> ক+খ</a>
+        </li>
+        <li class="list">
+          <a href="index_2.html"> <ion-icon name="library-outline"></ion-icon> অ+আ </a>
+        </li>
+        <li class="list"><a href="index5.html">
+          <ion-icon name="barcode-outline"></ion-icon> ABCD
+      </a></li>
+      <li class="list"><a href="index8.html">
+        <ion-icon name="barcode-outline"></ion-icon> ANIMAL
+    </a></li>
+        <li class="list">
+          <a href="index7.html">
+            <ion-icon name="musical-notes-outline"></ion-icon>kids music
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <section class="wraper">
+      <div class="box" data-text="শরুঅ">অ</div>
+      <div class="box" data-text="শরাইয়া">আ</div>
+      <div class="box" data-text="হ্রস্বই">ই</div>
+      <div class="box" data-text="দীর্ঘই">ঈ</div>
+      <div class="box" data-text="হ্রস্বউ">উ</div>
+      <div class="box" data-text="দীর্ঘউ">ঊ</div>
+      <div class="box" data-text="রী">ঋ</div>
+      <div class="box" data-text="এয়">এ</div>
+      <div class="box" data-text="অই">ঐ</div>
+      <div class="box" data-text="উও">ও</div>
+      <div class="box" data-text="ঔ">ঔ</div>
+      <div class="song_box box" data-text="thank you" id="song">
+        🤓
+        <audio src="image/abcd.mp3" aria-disabled="false"></audio>
+      </div><br>
+      <!--    29 complited-->
+    <h5 class="middle-text">বর্ণমালা উদাহারন</h5>
+      <div class="box" data-text="অজগড়  অজুগড়টি আসছে তেরে "><img src="image/python.png"/></div>
+      <div class="box" data-text="আমটি আমি খাবো পেড়ে"><img src="image/mango.png"/></div>
+      <div class="box" data-text="ইলিশ ভাজা খেতে মজা"><img src="image/elish.png"/></div>
+      <div class="box" data-text="ঈগল হোলো পাখীর রাজা"><img src="image/egol.p.ng.jpg"/></div>
+      <div class="box" data-text="উট চলছে মরুর পথে"><img src="image/camel.png"/></div>
+      <div class="box" data-text="ঊষা হাসে পূপ আকাশে"><img src="image/sun.png"/></div>
+      <div class="box" data-text="সরো ঋতুর দেশ বাংলাদেশ"><img src="image/grishmo.png"/></div>
+      <div class="box" data-text="একতারাটি বাজে বেশ"><img src="image/ektara.png"/></div>
+      <div class="box" data-text="হাতী এবার আসছে তেরে"><img src="image/elepend.png"/></div>
+      <div class="song_box box" data-text="thank you" id="song">
+        🤓
+        <audio src="image/abcd.mp3" aria-disabled="false"></audio>
+      </div>
+    </section>
+    
+  
+      
+      <!--    29 complited-->
+  
+    <script type="text/javascript">
+      /////////////////////////////////
+
+      var songs = document.querySelector("#song");
+      var songText = songs.getAttribute("data-song");
+      var audios = document.querySelector("audio");
+      songs.addEventListener("click", function () {
+        audios.volume = .2;
+        if (audios.paused) {
+          audios.play();
+        } else {
+          audios.pause();
+        }
+      });
+      ///////////////////////////////
+
+      var box = document.querySelectorAll(".box");
+      var speec = new SpeechSynthesisUtterance();
+      speec.lang = "bn-IN";
+      speec.rate = 0.9;
+      speec.volume=100;
+      box.forEach(function (index, val) {
+        index.onclick = function () {
+          console.log(index.getAttribute("data-text"), val);
+          speec.text = index.getAttribute("data-text");
+          window.speechSynthesis.speak(speec);
+        };
+      });
+      box.onclick = function () {
+        var datatext = box.getAttribute("data-text");
+        console.log(datatext.value);
+      };
+
+      /////////////////////////
+      var side_menu_btn = document.querySelector(".side_menu_btn");
+      var side_menu_box = document.querySelector(".side_menu_box");
+      side_menu_btn.onclick = function () {
+        side_menu_box.classList.toggle("side_btn_active");
+      };
+    </script>
+  </body>
+</html>

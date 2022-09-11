@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soroborno</title>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <link rel="stylesheet" href="css/style3.css" />
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+   
+         <span class="side_menu_btn"><ion-icon name="menu-outline"></ion-icon></span>
+     <div class="side_menu_box">
+        <ul>
+            <li class="list active"><a href="index.html">
+                    <ion-icon name="home-outline"></ion-icon>home
+                </a></li>
+            <li class="list"><a href="index4.html">
+                    <ion-icon name="book-outline"></ion-icon>arabic
+                </a></li>
+            <li class="list"><a href="index6.html">
+                    <ion-icon name="calculator-outline"></ion-icon>math
+                </a></li>
+            <li class="list"><a href="index_3.html">
+                    <ion-icon name="people-outline"></ion-icon>ক+খ
+                </a></li>
+            <li class="list"><a href="index_2.html">
+                    <ion-icon name="library-outline"></ion-icon>অ+আ
+            </a></li>
+            <li class="list"><a href="index5.html">
+                <ion-icon name="barcode-outline"></ion-icon>ABCD
+            </a></li>
+            <li class="list"><a href="index8.html">
+                <ion-icon name="barcode-outline"></ion-icon> ANIMAL
+            </a></li>
+            <li class="list"><a href="index7.html">
+                    <ion-icon name="musical-notes-outline"></ion-icon>kids music
+            </a></li>
+        </ul>
+    </div>
+   
+    <section class="wraper">
+        <div class="box" data-text='ক'>ক</div>
+        <div class="box" data-text='খঅ'>খ</div>
+        <div class="box" data-text='গঅ'>গ</div>
+        <div class="box" data-text='গহ'>ঘ</div>
+        <div class="box" data-text='ঊমো'>ঙ </div>
+        <div class="box" data-text='চঅ'>চ</div>
+        <div class="box" data-text='ছঅ'>ছ</div>
+        <div class="box" data-text='বরকাজ্জঅ'>জ</div>
+        <div class="box" data-text='ঝঅ'>ঝ</div>
+        <div class="box" data-text='নিও'>ঞ</div>
+        <div class="box" data-text='টঅ'>ট</div>
+        <div class="box" data-text='ঠঅ'>ঠ</div>
+        <div class="box" data-text='ডঅ'>ড</div>
+        <div class="box" data-text='ঢঅ'>ঢ</div>
+        <div class="box" data-text='মদ্দান্ন'>ণ</div>
+        <div class="box" data-text='তঅ'>ত</div>
+        <div class="box" data-text='থঅ'>থ</div>
+        <div class="box" data-text='দঅ'>দ</div>
+        <div class="box" data-text='ধঅ'>ধ</div>
+        <div class="box" data-text='দন্তান্ন'>ন</div>
+        <div class="box" data-text='পঅ'>প</div>
+        <div class="box" data-text='ফঅ'>ফ</div>
+        <div class="box" data-text='ব্অ'>ব</div>
+        <div class="box" data-text='ভঅ'>ভ</div>
+        <div class="box" data-text='মঅ'>ম</div>
+        <div class="box" data-text='অন্তস্তযঅ'>য</div>
+        <div class="box" data-text='অন্তস্তরঅ'>র</div>
+        <div class="box" data-text='লঅ'>ল</div>
+        <div class="box" data-text='টালিবাশুঅ'>শ</div>
+        <div class="box" data-text='মদিনাশুঅ'>ষ</div>
+        <div class="box" data-text='ডন্তাশুঅ'>স</div>
+        <div class="box" data-text='ক্ষঅ'>ক্ষ</div>
+        <div class="box" data-text='ডশিন্ডারঅ'>ড়</div>
+        <div class="box" data-text='ঢষিন্ডারঅ'>ঢ়</div>
+        <div class="box" data-text='হঅ'>হ</div>
+        <div class="box" data-text='অন্তস্তঅ'>য়</div>
+        <div class="box" data-text='খন্ডঅত'>ৎ</div>
+        <div class="box" data-text='অনেস্কার'>ং</div>
+        <div class="box" data-text='বিসর্গ'>ঃ</div>
+        <div class="box" data-text='চন্দবিন্দু'>ঁ</div>
+        <div class="song_box" data-text="Hhhoorrey" id="song">
+            🤓
+            <audio src="image/abcd.mp3" aria-disabled="false"></audio>
+        </div>
+        <div class="box" data-text='you can study now'>😎</div>
+        <!--    29 complited-->
+    </section>
+    <script type="text/javascript">
+        //////////////////////////////
+        var songs = document.querySelector("#song");
+      var songText = songs.getAttribute("data-song");
+      var audios = document.querySelector("audio");
+      songs.addEventListener("click", function () {
+        audios.volume = .9;
+        if (audios.paused) {
+          audios.play();
+        } else {
+          audios.pause();
+        }
+      });
+        ////////////////////////////////
+        var box = document.querySelectorAll(".box");
+        var speec = new SpeechSynthesisUtterance();
+        speec.lang = 'bn-IN';
+        speec.rate = .6;
+        box.forEach(function(index, val) {
+            index.onclick = function() {
+                console.log(index.getAttribute("data-text"), val)
+                speec.text = index.getAttribute("data-text");
+                window.speechSynthesis.speak(speec)
+            }
+        });
+        box.onclick = function() {
+            var datatext = box.getAttribute('data-text');
+        }
+        ///////////////////////////////////
+           var side_menu_btn = document.querySelector(".side_menu_btn");
+        var side_menu_box=document.querySelector(".side_menu_box");
+        side_menu_btn.onclick = function() {
+            side_menu_box.classList.toggle("side_btn_active");
+        }
+    </script>
+</body>
+
+</html>
